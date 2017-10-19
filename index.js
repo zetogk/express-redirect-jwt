@@ -8,7 +8,7 @@ app.get('/', cors(), (req, res) => {
     const state = req.query.state;
     const token = req.query.token;
 
-    jwt.verify(req.query.token, 'secrwet', function(err, decoded) {
+    jwt.verify(req.query.token, 'wrong-secret', (err, decoded) => {
 
         let validJWT = true;
 
